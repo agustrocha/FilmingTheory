@@ -17,7 +17,7 @@
         <swiper-slide v-for="(p, index) in projects" :key="index"
                       class="h-screen bg-black text-white flex justify-center items-center">
           <div v-if="index === 0">
-            <video src="../assets/REEL_FILMING_HQ_1200_V2.mp4" autoplay muted loop></video>
+            <video src="../assets/REEL_FILMING_HQ_1200_V2_compressed.mp4" autoplay muted loop></video>
           </div>
           <div v-else class="w-full h-full">
             <div class="absolute top-1/3 ml-20">
