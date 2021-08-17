@@ -5,6 +5,7 @@ export default createStore({
     projects: [
       {
         name: 'Filming Theory',
+        images: [],
         video_link: 'https://youtu.be/w7a9skMkNqk'
       },
       {
@@ -15,7 +16,7 @@ export default createStore({
         audiovisual_production: 'Filming Theory @filmingtheory | www.filmingtheory.com',
         client: ' L\'architetto -marca de ropa-. @larchitetto_',
         colaboration_with: 'Oya Team @oya_team Alta Fit @altafittenerife',
-        images: ['https://drive.google.com/uc?export=view&id=1FF366bIkrHXIRJE9KzT5lnVTnN9CHJ3C'],
+        images: ['https://drive.google.com/uc?export=view&id=1VUgIOWPfDUIxoUCE7hTOpAJVaMqxXCFb'],
         team: 'Dirección: Eduardo Suárez @edufilmingtheory\n' +
           'Ayudante de dirección: Aliya Akhunova @aliyakhunova\n' +
           'Script: Sebas @seb_rik11 \n' +
@@ -45,15 +46,97 @@ export default createStore({
         videos: []
       },
       {
-        name: 'Dasdas',
-        images: ['https://drive.google.com/uc?export=view&id=1nI0cmjICK9AtMxIealnvcdpdoQwBjSIK']
+        name: 'Peccati Di Gola',
+        project_type: 'Video reel',
+        images: ['https://drive.google.com/uc?export=view&id=1nI0cmjICK9AtMxIealnvcdpdoQwBjSIK'],
+        description_1: 'Muestra de vídeo reel de una de las primeras empresas en restauración que nos confió un trabajo de fotografía, vídeo, diseño de RRSS y cartelería personalizado para su comercio. Trabajamos con un equipo pequeño debido a las circunstancias restrictivas a causa del COVID 19. Aún así, el trabajo fue fructífero y cumplimos todas las metas y expectativas marcadas.',
+        audiovisual_production: 'Producción audiovisual: Filming Theory @filmingtheory | www.filmingtheory.com',
+        client: 'Cliente: Pecatti Di Gola -restaurante italiano en Tenerife-. @pecattidigola.menu',
+        team: 'Fotografía: Ayoze Delgado @ayoxe\n' +
+          'Vídeo: Eduardo Suárez @edufilmingtheory\n' +
+          'Ayudante de cámara: Aliya Akhunova @aliyakhunova\n' +
+          'Modelo: Sara Ramos @sara.ramoss_\n',
+        music: 'Swing Beats Jazz Hop Lo-fi Chill Mix [No Copyright Music]',
+        copyright: '© Filming Theory 2021'
+      },
+      {
+        name: 'Aliya Akhunova',
+        project_type: 'Fashion film',
+        images: ['https://drive.google.com/uc?export=view&id=1yoO21Waf4xKQ4GqrY9Mlwprv2-zzzJy4'],
+        description_1: 'Aliya Akhunova, diseñadora rusa residente en Tenerife, contactó con nosotros para llevar a cabo un fashion film de uno de sus diseños y fotografía de producto de la colección que presentó al concurso Jóvenes Diseñadores.',
+        audiovisual_production: 'Producción audiovisual: Filming Theory @filmingtheory | www.filmingtheory.com',
+        client: 'Aliya Akhunova @aliyakhunova',
+        team: 'Director de fotografía: Eduardo Suárez @edufilmingtheory\n' +
+          'Ayudante de cámara: Ayoze Delgado @ayoxe \n' +
+          'Vestuario: Aliya Akhunova @aliyakhunova\n' +
+          'Modelo: Aygul Akhunova @akhunovaygul\n',
+        music: '[Copyright Music]',
+        copyright: '© Filming Theory 2021'
+      },
+      {
+        name: 'Blackout Films',
+        project_type: 'Video reel',
+        images: ['https://drive.google.com/uc?export=view&id=1ZxVV_CUw-h3GUPkoEfvQYmVKCD0fh-mU'],
+        description_1: 'Este video reel para la empresa Blackout Film, nos dio la oportunidad de realizar un proyecto que recopila muchas de las producciones con las que llegaron a colaborar en el año 2019. Trabajo arduo que nos dio la posibilidad de estar en contacto con archivos de grandes producciones como Mugler, Northwestern Mutual o grandes directores de fotografía como Lubezki.',
+        audiovisual_production: 'Filming Theory @filmingtheory | www.filmingtheory.com',
+        client: 'Blackout Films @blackout_films',
+        editor: 'Eduardo Suárez @edufilmingtheory',
+        spots: ['Northwestern Mutual Commercial - Travel Planning', 'Alien Mugler Eau de Parfum - The Film', 'Armani Exchange - Martin Garrix - Internacional Spot'],
+        copyright: '© Filming Theory 2021'
+      },
+      {
+        name: 'Eventos',
+        project_type: 'Highlights',
+        images: ['https://drive.google.com/uc?export=view&id=1Jcncxipfi0lp2zx4xK7Gmjs5gTLeloX9'],
+        description_1: 'Pablo y Karen decidieron contar con nosotros para dejar constancia en vídeo de uno de los momentos más importantes de sus vidas, su boda. Para nosotros es un placer haberlos acompañado.',
+        audiovisual_production: 'Filming Theory @filmingtheory | www.filmingtheory.com',
+        client: 'Particular',
+        editor: 'Editor: Eduardo Suárez @edufilmingtheory',
+        music: '[Copyright Music]',
+        copyright: '© Filming Theory 2021'
+      },
+      {
+        name: 'Hamilton',
+        project_type: 'Teaser',
+        images: ['https://drive.google.com/uc?export=view&id=1P1j-kR01-z-g_lDAQ7XTWzCN1Muse7FO'],
+        description_1: '"Hamilton" cuenta la vida del entonces secretario del Tesoro y uno de los padres fundadores de Estados Unidos, pero quizás el menos conocido, Alexander Hamilton. \n' +
+          '\n' +
+          'La premisa de la historia y el hecho de tener que grabar durante una de sus funciones, nos mostraron la complejidad de alcanzar imágenes de buena calidad en entornos luminosos y de exposición complejos. Al final en la dificultad radica el aprendizaje y gracias a Mandrágora Producciones nosotros aprendimos muchísimo.\n',
+        audiovisual_production: 'Filming Theory @filmingtheory | www.filmingtheory.com',
+        client: 'Mandrágora Producciones',
+        team: ['Dirección: Ariadna Simó y Melodie Schmunk', 'Director de fotografía: Eduardo Suárez @edufilmingtheory', 'Ayudante de cámara: Aliya Akhunova @aliyakhunova'],
+        music: '[Copyright Music]',
+        copyright: '© Filming Theory 2021'
+      },
+      {
+        name: 'Mr.Global',
+        project_type: 'Film',
+        images: ['https://drive.google.com/uc?export=view&id=1GTfE9AJ_ddKJkENLhigvaHfaCVnhAKLH'],
+        description_1: 'Jorge Peraza, influencer y ganador de Mr. Global Tenerife, contrató nuestros servicios para realizar su vídeo de presentación a Mr. Global España. Además de que un placer trabajar con él, este proyecto nos permitió visitar lugares emblemáticos de la isla de Tenerife y ayudar con un mensaje positivo y de concienciación sobre el medioambiente en Canarias.',
+        audiovisual_production: 'Filming Theory @filmingtheory | www.filmingtheory.com',
+        client: 'Jorge Peraza - Mr Global Tf @jorperaza',
+        colaboration_with: 'Agencia Bellegroup @agencia_bellegroup',
+        team: ['DOP: Eduardo Suárez @edufilmingtheory', 'Fotógrafo: Adrián de la Cruz  @a_delacruz'],
+        copyright: '© Filming Theory 2021'
+      }
+    ],
+    menuLinks: [
+      {
+        title: 'Portfolio'
+      },
+      {
+        title: '¿Quiènes somos?'
+      },
+      {
+        title: 'Productos y servicios',
+        submenuLinks: ['Videomarketing', 'YAYA La capsula del tiempo']
+      },
+      {
+        title: 'Contacto'
       }
     ]
   },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
+  mutations: {},
+  actions: {},
+  modules: {}
 })
