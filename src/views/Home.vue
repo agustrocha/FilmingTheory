@@ -1,9 +1,5 @@
 <template>
   <div :class="[currentRoute.name === 'Home' ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0']" class="duration-1000 transform transition ease-in-out">
-    <div class="absolute z-30 w-full mt-20 flex justify-between items-center">
-      <icon-logo class="md:ml-20 ml-10 w-11 cursor-pointer"/>
-      <icon-menu @click="toggleMenu" class="md:mr-20 mr-10 w-8 cursor-pointer"/>
-    </div>
     <div :class="[open ? 'modal-open' : 'modal-close']" class="h-screen bg-black w-full">
       <swiper class="h-full"
               :slides-per-view="1"
@@ -25,11 +21,11 @@
                    class="uppercase text-xl mb-4 transition-opacity duration-500">{{ p.project_type }}
               </div>
               <div :class="menu ? 'opacity-0' : 'opacity-100'"
-                   class="text-5xl font-bold mb-6 transition-opacity duration-500">/{{ p.name }}
+                   class="text-7xl font-bold italic mb-24 transition-opacity duration-500">/{{ p.name }}
               </div>
-              <div class="flex items-center cursor-pointer" @click="toProject">
-                <p :class="menu ? 'opacity-0' : 'opacity-100'" class="transition-opacity mr-4 duration-500">VER PROYECTO</p>
-                <icon-arrow-right class="stroke-current text-white h-4" />
+              <div class="flex items-center cursor-pointer" @click="toProject(p)">
+                <p :class="menu ? 'opacity-0' : 'opacity-100'" class="transition-opacity mr-4 mb-0.5 duration-500">Ver proyecto</p>
+                <icon-arrow-right class="stroke-current text-white h-3" />
               </div>
             </div>
             <img v-if="p.images[0]" class="w-full h-full object-cover" :src="p.images[0]"/>
@@ -39,31 +35,6 @@
       <div :class="menu ? 'opacity-0' : 'opacity-100'"
            class="absolute transition-opacity duration-500 z-10 bottom-0 w-full mb-20 flex justify-center">
         <icon-scroll class="w-3"/>
-      </div>
-    </div>
-    <div
-      :class="`modal ${
-        !menu && 'opacity-0 pointer-events-none'
-      } z-20 fixed w-full h-full top-0 left-0 flex items-center justify-center`"
-    >
-      <div @click="toggleMenu" class="absolute w-full h-full bg-black opacity-70"></div>
-      <div>
-        <div v-for="(links, index) in menuLinks" :key="index">
-          <div v-if="links.submenuLinks">
-            <p class="relative cursor-pointer font-semibold mb-4 text-white text-center text-2xl z-20">
-              {{ links.title }}
-            </p>
-            <div class="mx-4">
-              <p class="relative cursor-pointer mb-4 text-white text-center" v-for="(link, index) in links.submenuLinks"
-                 :key="index">
-                {{ link }}
-              </p>
-            </div>
-          </div>
-          <p v-else class="relative cursor-pointer font-semibold mb-4 text-white text-center text-2xl z-20">
-            {{ links.title }} dasdasd
-          </p>
-        </div>
       </div>
     </div>
   </div>
@@ -79,8 +50,6 @@ import 'swiper/components/scrollbar/scrollbar.scss'
 import 'swiper/components/effect-fade/effect-fade.min.css'
 import { computed, ref } from 'vue'
 import { useStore } from 'vuex'
-import IconLogo from '../components/icon-logo'
-import IconMenu from '../components/icon-menu'
 import IconScroll from '../components/icon-scroll'
 import { useRouter } from 'vue-router'
 import IconArrowRight from '../components/icon-arrow-right'
@@ -91,8 +60,6 @@ export default {
   components: {
     IconArrowRight,
     IconScroll,
-    IconMenu,
-    IconLogo,
     Swiper,
     SwiperSlide
   },
@@ -112,17 +79,14 @@ export default {
       projects: computed(() => {
         return store.state.projects
       }),
-      menuLinks: computed(() => {
-        return store.state.menuLinks
-      }),
       onSlideChange () {
         console.log(open)
       },
       toggleMenu: () => {
         menu.value ? menu.value = false : menu.value = true
       },
-      toProject: () => {
-        router.push({ name: 'Project details' })
+      toProject: (project) => {
+        router.push({ name: 'Project details', params: { id: project.id } })
       }
     }
   }

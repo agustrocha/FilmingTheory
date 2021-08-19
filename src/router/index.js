@@ -16,7 +16,7 @@ const routes = [
         component: EmptyView
       },
       {
-        path: '/project',
+        path: '/project/:id',
         name: 'Project details',
         component: Project
       },

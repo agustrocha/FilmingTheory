@@ -1,6 +1,14 @@
+@import 'font-face.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/*! @import */
+
+:root {
+    --swiper-navigation-color: white;
+}
+
 
 .modal {
     transition: opacity 0.5s ease;
@@ -16,4 +24,7 @@
     filter: none;
 }
 
-
+body {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+}
