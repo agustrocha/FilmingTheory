@@ -20,21 +20,23 @@
     <div>
       <div v-for="(links, index) in menuLinks" :key="index">
         <div class="" v-if="links.submenuLinks">
-          <div class="relative z-20 flex items-center mb-4">
-            <p @click="toggleSubMenu"
-               class="relative cursor-pointer font-semibold text-white text-center text-2xl z-20 hover:text-primary">
+          <div @click="toggleSubMenu" class="relative z-20 flex items-center mb-4">
+            <p class="relative cursor-pointer font-semibold text-white text-center text-2xl z-20 hover:text-primary">
               {{ links.title }}
             </p>
-            <icon-arrow-right :class="[submenu ? 'rotate-0' : 'rotate-90']"  class="transform  ml-6 mt-1 transition duration-100 stroke-current text-white hover:text-primary" />
+            <icon-arrow-right :class="[submenu ? 'rotate-0' : 'rotate-90']"
+                              class="transform relative w-3 left-7 mt-1 transition duration-100 stroke-current text-white"/>
           </div>
           <div v-if="submenu" class="mx-4 absolute top-51% right-30%">
-            <p class="cursor-pointer mb-4 text-white " v-for="(link, index) in links.submenuLinks"
+            <p :class="link !== '54% Rebate' ? 'text-secondary pointer-events-none' : 'text-white hover:text-primary'" class="cursor-pointer mb-4"
+               v-for="(link, index) in links.submenuLinks"
                :key="index">
               {{ link }}
             </p>
           </div>
         </div>
-        <p v-else class="relative cursor-pointer font-semibold mb-4 text-white text-center text-2xl z-20 hover:text-primary">
+        <p v-else
+           class="relative cursor-pointer font-semibold mb-4 text-white text-center text-2xl z-20 hover:text-primary">
           {{ links.title }}
         </p>
       </div>
@@ -78,6 +80,9 @@ export default {
       },
       home: () => {
         router.push({ name: 'Home' })
+      },
+      pushUrl: (name) => {
+        router.push({ name: name })
       }
     }
   }

@@ -3,6 +3,7 @@ import About from '../views/About.vue'
 import Project from '../views/Project'
 import HomeLayout from '../layout/HomeLayout'
 import EmptyView from '../views/EmptyView'
+import Rebate from '../views/Rebate'
 
 const routes = [
   {
@@ -19,6 +20,11 @@ const routes = [
         path: '/project/:id',
         name: 'Project details',
         component: Project
+      },
+      {
+        path: 'rebate',
+        name: '54% Rebate',
+        component: Rebate
       },
       {
         path: '/about',

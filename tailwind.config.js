@@ -6,7 +6,8 @@ module.exports = {
     extend: {
       height: {
         100: '30rem',
-        carrousel: '20rem'
+        carrousel: '22rem',
+        footer: '13.25rem'
       },
       fontSize: {
         super10XL: '10rem'
@@ -14,11 +15,16 @@ module.exports = {
       colors: {
         white: '#ffffff',
         neutral: '#1c1c1c',
-        primary: '#FFDE00'
+        primary: '#FFDE00',
+        secondary: '#6E6E6E'
       },
       inset: {
         '51%': '51%',
         '30%': '30%'
+      },
+      margin: {
+        container: '13.75rem',
+        18: '4.5rem'
       }
     }
   },

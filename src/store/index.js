@@ -19,31 +19,28 @@ export default createStore({
         colaboration_with: 'Oya Team @oya_team Alta Fit @altafittenerife',
         header_banner: 'https://drive.google.com/uc?export=view&id=1Ke1hAZOJ7HYJxL4TXd_q3dibazG-RTww',
         images: ['https://drive.google.com/uc?export=view&id=1VUgIOWPfDUIxoUCE7hTOpAJVaMqxXCFb', 'https://drive.google.com/uc?export=view&id=1VUgIOWPfDUIxoUCE7hTOpAJVaMqxXCFb', 'https://drive.google.com/uc?export=view&id=1VUgIOWPfDUIxoUCE7hTOpAJVaMqxXCFb', 'https://drive.google.com/uc?export=view&id=1VUgIOWPfDUIxoUCE7hTOpAJVaMqxXCFb', 'https://drive.google.com/uc?export=view&id=1VUgIOWPfDUIxoUCE7hTOpAJVaMqxXCFb', 'https://drive.google.com/uc?export=view&id=1VUgIOWPfDUIxoUCE7hTOpAJVaMqxXCFb', 'https://drive.google.com/uc?export=view&id=1VUgIOWPfDUIxoUCE7hTOpAJVaMqxXCFb'],
-        team: 'Dirección: Eduardo Suárez @edufilmingtheory\n' +
-          'Ayudante de dirección: Aliya Akhunova @aliyakhunova\n' +
-          'Script: Sebas @seb_rik11 \n' +
-          'Casting: Eduardo Suárez @edufilmingtheory; Aliya Akhunova @aliyakhunova; Gio @gio_en_audiovisual\n' +
-          'Equipo de producción: Fede @federicodelgadolopez; Gabri @gabriela_producer; Natalia @natidicas\n' +
-          'Localización: Ylenia @yleniasiverio; Elicio Hernández; Tracy @tracymedz; Ylenia @yleniasiverio\n' +
-          'Operador cámara 1: Ayo @ayoxe\n' +
-          'Operador cámara 2: Tracy @tracymedz\n' +
-          'Operador cámara 3: Eduardo Suárez @edufilmingtheory\n' +
-          'Ayudante de cámara: Álvaro Rey\n' +
-          'Dron: Tommy García @tommy_progo\n' +
-          'Foto fija: Gema @gmahdez\n' +
-          'Ayudante de iluminación: Tracy @tracymedz\n' +
-          'Directora de arte: Gio @gio_en_audiovisual\n' +
-          'Estilista: Aliya Akhunova @aliyakhunova\n' +
-          'Maquillaje: Sonia @sonii_makeup\n' +
-          'Peluquería: @fuentesnerea @paulahairstyle_\n' +
-          'Edición: Eduardo Suárez @edufilmingtheory\n' +
-          'Diseño sonido: Eduardo Suárez @edufilmingtheory\n' +
-          'Etalonaje: Eduardo Suárez @edufilmingtheory\n' +
-          'Diseño gráfico: Atteneri González @attenerigonmen\n' +
-          'Reparto: Cristián Hidalgo @chv_cristian; Bea Díaz @bdm_bea; Aygul Akhunova @akhunovaygul; \n' +
-          'Carlos Gómez; Ricardo Carrabia @rjcarrabiabmx; Sergio Ruíz @sergioruiz8; Ana Berdejo @anaber_mrs_model; Mamadou @black_perry1; Salva @salva_roguez24; Jennifer Obama @jennifer_obama; Jorge Peraza @jorperaza; Cathaysa Leyton @catyleyton_ \n' +
-          '\n',
-        music: 'Música: Sport Cars Rock by Infraction [No Copyright Music]\n',
+        team: ['Dirección: Eduardo Suárez @edufilmingtheory',
+          'Ayudante de dirección: Aliya Akhunova @aliyakhunova',
+          'Script: Sebas @seb_rik11 \n',
+          'Casting: Eduardo Suárez @edufilmingtheory; Aliya Akhunova @aliyakhunova; Gio @gio_en_audiovisual\n',
+          'Equipo de producción: Fede @federicodelgadolopez; Gabri @gabriela_producer; Natalia @natidicas\n',
+          'Localización: Ylenia @yleniasiverio; Elicio Hernández; Tracy @tracymedz; Ylenia @yleniasiverio\n',
+          'Operador cámara 1: Ayo @ayoxe\n',
+          'Operador cámara 2: Tracy @tracymedz\n',
+          'Operador cámara 3: Eduardo Suárez @edufilmingtheory\n',
+          'Ayudante de cámara: Álvaro Rey\n',
+          'Dron: Tommy García @tommy_progo\n',
+          'Foto fija: Gema @gmahdez\n',
+          'Ayudante de iluminación: Tracy @tracymedz\n',
+          'Directora de arte: Gio @gio_en_audiovisual\n',
+          'Estilista: Aliya Akhunova @aliyakhunova\n',
+          'Maquillaje: Sonia @sonii_makeup\n',
+          'Peluquería: @fuentesnerea @paulahairstyle_\n',
+          'Edición: Eduardo Suárez @edufilmingtheory\n',
+          'Diseño sonido: Eduardo Suárez @edufilmingtheory\n',
+          'Etalonaje: Eduardo Suárez @edufilmingtheory\n',
+          'Diseño gráfico: Atteneri González @attenerigonmen\n'],
+        music: 'Música: Sport Cars Rock by Infraction [No Copyright Music]',
         copyright: '© Filming Theory 2021',
         videos: []
       },
@@ -56,10 +53,10 @@ export default createStore({
         description_1: 'Muestra de vídeo reel de una de las primeras empresas en restauración que nos confió un trabajo de fotografía, vídeo, diseño de RRSS y cartelería personalizado para su comercio. Trabajamos con un equipo pequeño debido a las circunstancias restrictivas a causa del COVID 19. Aún así, el trabajo fue fructífero y cumplimos todas las metas y expectativas marcadas.',
         audiovisual_production: 'Producción audiovisual: Filming Theory @filmingtheory | www.filmingtheory.com',
         client: 'Cliente: Pecatti Di Gola -restaurante italiano en Tenerife-. @pecattidigola.menu',
-        team: 'Fotografía: Ayoze Delgado @ayoxe\n' +
-          'Vídeo: Eduardo Suárez @edufilmingtheory\n' +
-          'Ayudante de cámara: Aliya Akhunova @aliyakhunova\n' +
-          'Modelo: Sara Ramos @sara.ramoss_\n',
+        team: ['Fotografía: Ayoze Delgado @ayoxe\n',
+          'Vídeo: Eduardo Suárez @edufilmingtheory\n',
+          'Ayudante de cámara: Aliya Akhunova @aliyakhunova\n',
+          'Modelo: Sara Ramos @sara.ramoss_\n'],
         music: 'Swing Beats Jazz Hop Lo-fi Chill Mix [No Copyright Music]',
         copyright: '© Filming Theory 2021'
       },
@@ -139,11 +136,11 @@ export default createStore({
         title: 'Portfolio'
       },
       {
-        title: '¿Quiènes somos?'
+        title: '¿Quiénes somos?'
       },
       {
         title: 'Productos y servicios',
-        submenuLinks: ['Videomarketing', 'YAYA La capsula del tiempo']
+        submenuLinks: ['Videomarketing', 'YAYA La capsula del tiempo', '54% Rebate']
       },
       {
         title: 'Contacto'
