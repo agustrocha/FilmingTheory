@@ -4,6 +4,7 @@ import Project from '../views/Project'
 import HomeLayout from '../layout/HomeLayout'
 import EmptyView from '../views/EmptyView'
 import Rebate from '../views/Rebate'
+import Contact from '../views/Contact'
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
         path: '/about',
         name: 'About',
         component: About
+      },
+      {
+        path: '/contact-us',
+        name: 'Contact',
+        component: Contact
       }
     ]
   }

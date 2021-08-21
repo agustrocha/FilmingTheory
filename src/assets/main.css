@@ -7,6 +7,18 @@
 
 :root {
     --swiper-navigation-color: white;
+    --swiper-navigation-size: 10px;
+}
+
+body {
+    overflow: auto;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+}
+
+::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just */
 }
 
 

@@ -1,15 +1,17 @@
 <template>
   <div class="h-full w-full bg-neutral">
     <div class="absolute z-30 w-full mt-20 flex justify-between items-center">
-      <icon-logo @click="home" class="md:ml-20 ml-10 w-11 cursor-pointer"/>
-      <icon-menu @click="toggleMenu" class="md:mr-20 mr-10 w-8 cursor-pointer"/>
+      <icon-logo @click="home" class="ml-container cursor-pointer"/>
+      <icon-menu @click="toggleMenu" class="mr-container w-8 cursor-pointer"/>
     </div>
-    <suspense>
-      <template #default>
-        <router-view/>
-      </template>
-    </suspense>
-    <Home/>
+    <main class="">
+      <suspense>
+        <template #default>
+          <router-view/>
+        </template>
+      </suspense>
+      <Home/>
+    </main>
   </div>
   <div
     :class="`modal ${
@@ -19,23 +21,25 @@
     <div @click="toggleMenu" class="absolute w-full h-full bg-black opacity-70"></div>
     <div>
       <div v-for="(links, index) in menuLinks" :key="index">
-        <div class="" v-if="links.submenuLinks">
-          <div @click="toggleSubMenu" class="relative z-20 flex items-center mb-4">
-            <p class="relative cursor-pointer font-semibold text-white text-center text-2xl z-20 hover:text-primary">
+        <div class="relative" v-if="links.submenuLinks">
+          <div @click="toggleSubMenu" class="relative z-20 flex items-center mb-4 text-white hover:text-primary">
+            <p class="relative cursor-pointer font-semibold text-center text-2xl z-20">
               {{ links.title }}
             </p>
-            <icon-arrow-right :class="[submenu ? 'rotate-0' : 'rotate-90']"
-                              class="transform relative w-3 left-7 mt-1 transition duration-100 stroke-current text-white"/>
+            <icon-arrow-right :class="[submenu ? 'rotate-90' : 'rotate-0']"
+                              class="transform relative w-3 left-7 mt-1 transition duration-100"/>
           </div>
-          <div v-if="submenu" class="mx-4 absolute top-51% right-30%">
-            <p :class="link !== '54% Rebate' ? 'text-secondary pointer-events-none' : 'text-white hover:text-primary'" class="cursor-pointer mb-4"
-               v-for="(link, index) in links.submenuLinks"
-               :key="index">
-              {{ link }}
+          <div v-if="submenu" class="mx-4 relative ">
+            <p
+              :class="link.title !== '54% Rebate' ? 'text-secondary pointer-events-none' : 'text-white hover:text-primary'"
+              class="cursor-pointer text-center mb-4"
+              v-for="(link, index) in links.submenuLinks"
+              :key="index" @click="pushUrl(link.url)">
+              {{ link.title }}
             </p>
           </div>
         </div>
-        <p v-else
+        <p v-else @click="pushUrl(links.url)"
            class="relative cursor-pointer font-semibold mb-4 text-white text-center text-2xl z-20 hover:text-primary">
           {{ links.title }}
         </p>
@@ -83,6 +87,8 @@ export default {
       },
       pushUrl: (name) => {
         router.push({ name: name })
+        submenu.value = false
+        menu.value = false
       }
     }
   }

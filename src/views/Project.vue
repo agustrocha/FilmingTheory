@@ -1,20 +1,20 @@
 <template>
   <div :class="[currentRoute.name === 'Project details' ? 'opacity-100' : 'opacity-0']"
        class="transition duration-100 ease-in-out absolute top-0 right-0 w-full bg-neutral">
-    <div id="project_header" class="relative h-100 bg-white">
+    <div id="project_header" class="relative h-100">
       <img class="object-cover w-full h-full" :src="project.header_banner">
-      <div data-aos="fade-down" data-aos-duration="1000"
-           class="transition duration-200 delay-200 text-white text-super10XL italic absolute top-2/3 right-0 mr-20">
-        {{ project.name }}
-      </div>
+      <a :href="project.video" class="absolute cursor-pointer top-0 left-47% mt-44">
+        <icon-button-play />
+      </a>
     </div>
-    <div class="flex">
-      <div data-aos="fade-down-right" data-aos-duration="1000" class="mt-20 w-2/3 mx-container flex flex-col justify-between">
+    <div class="flex mx-containerXL">
+      <div data-aos="fade-down-right" :class="images.length <= 0 ? 'mb-32' : ''" data-aos-duration="1000" class="mt-28 w-2/3 mr-52 flex flex-col justify-between">
         <div>
+          <div class="text-white italic font-bold uppercase text-5xl mb-6">{{ project.name }}</div>
           <div class="text-white uppercase text-2xl mb-10">{{ project.project_type }}</div>
-          <div class="text-white w-full text-xl">{{ project.description_1 }}</div>
-          <div class="text-white w-full text-xl mt-8">{{ project.description_2 }}</div>
-          <div class="mt-8 text-xl text-white">
+          <div class="text-white leading-normal w-full text-lg">{{ project.description_1 }}</div>
+          <div class="text-white leading-normal w-full text-lg mt-8">{{ project.description_2 }}</div>
+          <div class="mt-8 text-lg leading-normal text-white">
             <p v-if="project.audiovisual_production"><span
               class="font-semibold text-secondary">Producción audiovisual: </span>{{ project.audiovisual_production }}
             </p>
@@ -25,27 +25,27 @@
           </div>
         </div>
         <div class="flex items-center mt-20">
-          <p class="text-primary text-xl font-black mr-4">COMPARTE:</p>
-          <icon-instagram class="text-primary mr-4"/>
-          <icon-facebook class="text-primary mr-4" />
-          <icont-twitter class="text-primary mr-4" />
+          <p class="text-primary text-lg font-black mr-4">COMPARTE:</p>
+          <a href="https://www.instagram.com/"><icon-instagram class="text-primary mr-4"/></a>
+          <a href="https://es-es.facebook.com/"><icon-facebook class="text-primary mr-4" /></a>
+          <a href="https://twitter.com/"><icont-twitter class="text-primary mr-4" /></a>
         </div>
       </div>
-      <div data-aos="fade-down-left" data-aos-duration="1000" class="mt-20 w-1/3">
-        <h3 class="text-xl text-secondary font-semibold mt-18">Equipo técnico</h3>
-        <div class="w-3/4 mt-6 text-white text-lg">
+      <div v-if="project.team" data-aos="fade-down-left" data-aos-duration="1000" class="mt-40 w-1/3">
+        <h3 class="text-lg text-secondary font-semibold mt-24">Equipo técnico</h3>
+        <div class="w-3/4 mt-2 text-white text-sm">
           <p v-for="(t, index) in project.team" :key="index">{{ t }}</p>
         </div>
       </div>
     </div>
-    <div data-aos="fade-down" data-aos-duration="1000" class="h-carrousel bg-neutral my-32">
+    <div v-if="images.length > 0" data-aos="fade-down" data-aos-duration="1000" class="h-carrousel bg-neutral my-32">
       <swiper :navigation="true" :slidesPerView="3" :loop="true" class="mySwiper h-full w-full">
-        <swiper-slide class="bg-white h-full w-full" v-for="(img, index) in project.images" :key="index">
+        <swiper-slide class="bg-white h-full w-full" v-for="(img, index) in images" :key="index">
           <img class="w-full h-full object-cover" :src="img"/>
         </swiper-slide>
       </swiper>
     </div>
-    <div class="flex justify-between mb-32 mx-24">
+    <div class="flex hidden justify-between mb-32 mx-24">
       <router-link :to="{ name: 'Project details', params: { id: prevProject.id } }" :class="projectIndex > 1 ? 'text-white cursor-pointer' : 'text-secondary pointer-events-none'" class="flex items-center">
         <icon-arrow-left class="mr-10 mt-0.5 w-2" />
         <p>proyecto anterior</p>
@@ -55,9 +55,10 @@
         <icon-arrow-right class="text-white w-2 mt-0.5 ml-10" />
       </div>
     </div>
-    <div class="h-footer bg-black flex items-center justify-center">
-      <p class="text-white text-lg">© 2021 Filming Theory</p>
-    </div>
+    <Footer />
+  </div>
+  <div class="fixed top-1/3">
+    <icon-scroll class="w-3 ml-17 " />
   </div>
 </template>
 
@@ -74,12 +75,19 @@ import IcontTwitter from '../components/icont-twitter'
 import IconInstagram from '../components/icon-instagram'
 import IconArrowRight from '../components/icon-arrow-right'
 import IconArrowLeft from '../components/icon-arrow-left'
+import Footer from '../components/Footer'
+import IconScroll from '../components/icon-scroll'
+import { ref } from '@vue/runtime-core'
+import IconButtonPlay from '../components/icon-button-play'
 
 SwiperCore.use([Navigation])
 
 export default {
   name: 'Project',
   components: {
+    IconButtonPlay,
+    IconScroll,
+    Footer,
     IconArrowLeft,
     IconArrowRight,
     IconInstagram,
@@ -93,19 +101,21 @@ export default {
     const router = useRouter()
     const store = useStore()
     const destinationId = router.currentRoute.value.params.id
-    const project = store.state.projects.find(p => String(p.id) === String(destinationId))
+    const project = ref(store.state.projects.find(p => String(p.id) === String(destinationId)))
 
     if (!project) {
       await router.push({ name: 'Home' })
     }
 
-    const projectIndex = store.state.projects.findIndex(p => p.id === project.id)
+    const projectIndex = store.state.projects.findIndex(p => p.id === project.value.id)
     const prevProject = store.state.projects[projectIndex - 1]
     const nextProject = store.state.projects[projectIndex + 1]
     const projects = store.state.projects
-    console.log(project)
+    const images = ref(project.value.images)
+    console.log(images.value.length)
     return {
       router,
+      images,
       project,
       projects,
       projectIndex,
@@ -126,6 +136,6 @@ export default {
 <style scoped>
 
 .swiper-button-prev {
-  left: 20px;
+
 }
 </style>
