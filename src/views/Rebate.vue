@@ -11,13 +11,13 @@
   <div :class="[openRebate ? 'translate-y-64' : 'translate-y-full']"
        class="transform transition duration-1000 ease-in-out bg-white h-full w-full absolute z-10">
   </div>
-  <div class="absolute z-20 mt-12 top-1/3">
+  <div class="absolute z-20 mt-12 top-1/3 w-full">
     <div :class="[openRebate ? 'text-black' : 'text-white']"
-         class="text-xl  mx-container xl:mx-containerXL transition duration-1000 uppercase mb-4">
+         class="lg:text-xl text-base mx-containerXS xl:mx-containerXL transition duration-1000 uppercase mb-4">
       Films and series in the Canary Islands
     </div>
     <div :class="[openRebate ? 'text-black' : 'text-white']"
-         class="text-7xl mx-container xl:mx-containerXL transition duration-1000 ease-out flex items-center cursor-pointer"
+         class="lg:text-7xl text-3xl w-auto mx-containerXS xl:mx-containerXL transition duration-1000 ease-out flex items-center cursor-pointer"
          @click="toggleRebate">
       <p class="italic font-light"><span class="font-bold">54% Rebate</span> for foreign productions</p>
       <icon-arrow-down :class="[openRebate ? '-rotate-180' : '-rotate-0']"
@@ -25,14 +25,14 @@
     </div>
     <div class="">
       <div :class="[openRebate ? 'opacity-100' : 'opacity-0']"
-           class="transition  mx-container xl:mx-containerXL duration-1000 w-54% mt-12">Producers with
+           class="transition mx-containerXS xl:mx-containerXL duration-1000 lg:w-54% mt-12">Producers with
         tax residence in the Canary Islands who are in charge of a foreign film production
         are entitled to a tax deduction of 50-45% on expenses in Spain with a ceiling of 12.4 million euros (the maximum
         deduction base is 27.3 million euros. As a requirement, these productions must spend at least 1 million euros in
         eligible costs during filming or € 200,000 on animation, always in Spanish territory.
       </div>
       <div :class="[openRebate ? 'opacity-100' : 'opacity-0']"
-           class="transition  mx-container xl:mx-containerXL duration-1000 my-28">
+           class="transition mx-container xl:mx-containerXL duration-1000 my-28">
         <rebate-tag label="Every possible location"
                     label_2="Residential, urban, industrial, monumental, historic, nature, beaches, sound stages"/>
         <rebate-tag label="All production services executive and line producing"

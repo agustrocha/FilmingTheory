@@ -13,18 +13,18 @@
         <swiper-slide v-for="(p, index) in projects" :key="index"
                       class="h-screen bg-black text-white flex justify-center items-center">
           <div v-if="index === 0">
-            <video src="../assets/WEB_MP4_REEL_V1.mp4" autoplay muted loop></video>
+            <video class="object-cover h-screen lg:h-auto" src="../assets/WEB_MP4_REEL_V1.mp4" autoplay muted loop></video>
             <a class="absolute z-30 bottom-0 right-0" href="https://www.youtube.com/watch?v=5kvWzQQD2CU">
-              <icon-to-youtube class="mr-container mb-20 cursor-pointe text-white"/>
+              <icon-to-youtube class="lg:mr-container mr-containerXS lg:mb-20 mb-12 w-1/2 lg:w-auto cursor-pointe text-white"/>
             </a>
           </div>
           <div v-else class="w-full h-full">
-            <div class="absolute top-1/3 ml-container">
+            <div class="absolute top-1/3 lg:ml-container ml-containerXS">
               <div :class="menu ? 'opacity-0' : 'opacity-100'"
-                   class="uppercase text-xl mb-4 transition-opacity duration-500">{{ p.project_type }}
+                   class="uppercase lg:text-xl text-lg mb-4 transition-opacity duration-500">{{ p.project_type }}
               </div>
               <div :class="menu ? 'opacity-0' : 'opacity-100'"
-                   class="text-7xl font-bold italic mb-24 transition-opacity duration-500">/{{ p.name }}
+                   class="lg:text-7xl text-4xl font-bold italic lg:mb-24 mb-12 transition-opacity duration-500">/{{ p.name }}
               </div>
               <div class="flex bg-primary w-40 items-center cursor-pointer justify-center rounded-3xl" @click="toProject(p)">
                 <p :class="menu ? 'opacity-0' : 'opacity-100'" class="transition-opacity text-black py-2 mb-0.5 duration-500">Ver
@@ -36,7 +36,7 @@
         </swiper-slide>
       </swiper>
       <div :class="menu ? 'opacity-0' : 'opacity-100'"
-           class="absolute transition-opacity duration-500 z-10 bottom-0 w-full mb-20 px-56 flex justify-center">
+           class="absolute transition-opacity duration-500 z-10 bottom-0 w-full mb-20 px-56 justify-center hidden lg:flex">
         <icon-scroll class="w-3"/>
       </div>
     </div>

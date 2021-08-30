@@ -1,17 +1,17 @@
 <template>
   <div :class="[currentRoute.name === 'Project details' ? 'opacity-100' : 'opacity-0']"
        class="transition duration-100 ease-in-out absolute top-0 right-0 w-full bg-neutral">
-    <div id="project_header" class="relative h-100">
+    <div id="project_header" class="relative lg:h-100 h-72">
       <img class="object-cover w-full h-full" :src="project.header_banner">
-      <a :href="project.video" class="absolute cursor-pointer top-0 left-47% mt-44">
-        <icon-button-play />
+      <a :href="project.video" class="absolute cursor-pointer top-0 left-43% mt-28">
+        <icon-button-play class="w-1/2"/>
       </a>
     </div>
-    <div class="flex mx-containerXL">
-      <div data-aos="fade-down-right" :class="images.length <= 0 ? 'mb-32' : ''" data-aos-duration="1000" class="mt-28 w-2/3 mr-52 flex flex-col justify-between">
+    <div class="flex flex-col lg:flex-row lg:mx-containerXL mx-containerXS">
+      <div data-aos="fade-down-right" :class="images.length <= 0 ? 'lg:mb-32 mb-12' : ''" data-aos-duration="1000" class="lg:mt-28 mt-16 lg:w-2/3 w-full lg:mr-52 flex flex-col justify-between">
         <div>
-          <div class="text-white italic font-bold uppercase text-5xl mb-6">{{ project.name }}</div>
-          <div class="text-white uppercase text-2xl mb-10">{{ project.project_type }}</div>
+          <div class="text-white italic font-bold uppercase lg:text-5xl text-4xl mb-6">{{ project.name }}</div>
+          <div class="text-white uppercase text-xl mb-10">{{ project.project_type }}</div>
           <div class="text-white leading-normal w-full text-lg">{{ project.description_1 }}</div>
           <div class="text-white leading-normal w-full text-lg mt-8">{{ project.description_2 }}</div>
           <div class="mt-8 text-lg leading-normal text-white">
@@ -31,15 +31,25 @@
           <a href="https://twitter.com/"><icont-twitter class="text-primary mr-4" /></a>
         </div>
       </div>
-      <div v-if="project.team" data-aos="fade-down-left" data-aos-duration="1000" class="mt-40 w-1/3">
+      <div v-if="project.team" data-aos="fade-down-left" data-aos-duration="1000" class="lg:mt-40 w-full lg:w-1/3">
         <h3 class="text-lg text-secondary font-semibold mt-24">Equipo técnico</h3>
-        <div class="w-3/4 mt-2 text-white text-sm">
+        <div class="lg:w-3/4 w-full mt-2 text-white text-sm">
           <p v-for="(t, index) in project.team" :key="index">{{ t }}</p>
         </div>
       </div>
     </div>
-    <div v-if="images.length > 0" data-aos="fade-down" data-aos-duration="1000" class="h-carrousel bg-neutral my-32">
-      <swiper :navigation="true" :slidesPerView="3" :loop="true" class="mySwiper h-full w-full">
+    <div v-if="images.length > 0" data-aos="fade-down" data-aos-duration="1000" class="lg:h-carrousel h-carrouselXS bg-neutral my-32">
+      <swiper :navigation="true" :slidesPerView="1" :loop="true" :breakpoints='{
+        "640": {
+          "slidesPerView": 1,
+        },
+        "768": {
+          "slidesPerView": 2,
+        },
+        "1024": {
+          "slidesPerView": 3,
+        }
+}' class="mySwiper h-full w-full">
         <swiper-slide class="bg-white h-full w-full" v-for="(img, index) in images" :key="index">
           <img class="w-full h-full object-cover" :src="img"/>
         </swiper-slide>
@@ -57,7 +67,7 @@
     </div>
     <Footer />
   </div>
-  <div class="fixed top-1/3">
+  <div class="fixed hidden lg:block top-1/3">
     <icon-scroll class="w-3 ml-17 " />
   </div>
 </template>

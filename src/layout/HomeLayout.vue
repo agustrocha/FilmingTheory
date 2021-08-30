@@ -1,8 +1,8 @@
 <template>
   <div class="h-full w-full bg-neutral">
-    <div class="absolute z-30 w-full mt-20 flex justify-between items-center">
-      <icon-logo @click="home" class="ml-container cursor-pointer"/>
-      <icon-menu @click="toggleMenu" class="mr-container w-8 cursor-pointer"/>
+    <div class="absolute z-30 w-full lg:mt-20 mt-12 flex justify-between items-center">
+      <icon-logo @click="home" class="lg:w-auto w-1/4 lg:ml-container ml-containerXS cursor-pointer"/>
+      <icon-menu @click="toggleMenu" class="lg:mr-container mr-containerXS lg:w-8 w-7 cursor-pointer"/>
     </div>
     <main class="">
       <suspense>

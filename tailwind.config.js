@@ -14,9 +14,11 @@ module.exports = {
       height: {
         100: '30rem',
         carrousel: '22rem',
+        carrouselXS: '16rem',
         footer: '13.25rem'
       },
       width: {
+        '41%': '41%',
         '54%': '54%'
       },
       fontSize: {
@@ -31,10 +33,12 @@ module.exports = {
       inset: {
         '51%': '51%',
         '30%': '30%',
+        '43%': '43%',
         '47%': '47%'
       },
       margin: {
         container: '8.75rem',
+        containerXS: '2rem',
         containerXL: '12.75rem',
         18: '4.5rem',
         17: '4.25rem'
