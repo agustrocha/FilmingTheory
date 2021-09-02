@@ -1,6 +1,26 @@
+@import 'font-face.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/*! @import */
+
+:root {
+    --swiper-navigation-color: white;
+    --swiper-navigation-size: 10px;
+}
+
+body {
+    overflow: auto;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+}
+
+::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just */
+}
+
 
 .modal {
     transition: opacity 0.5s ease;
@@ -16,4 +36,7 @@
     filter: none;
 }
 
-
+body {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+}
