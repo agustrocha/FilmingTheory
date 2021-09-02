@@ -5,8 +5,6 @@
       <swiper class="h-full"
               :slides-per-view="1"
               :direction="'vertical'"
-              :pagination="{ clickable: true }"
-              :scrollbar="{ draggable: true }"
               :effect="'fade'"
               :mousewheel="true"
       >
@@ -44,7 +42,7 @@
 </template>
 
 <script>
-import SwiperCore, { EffectFade, Mousewheel, Pagination, Scrollbar, A11y } from 'swiper'
+import SwiperCore, { EffectFade, Mousewheel } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/swiper.scss'
 import 'swiper/components/navigation/navigation.scss'
@@ -57,7 +55,7 @@ import { useRouter } from 'vue-router'
 import IconScroll from '../components/icon-scroll'
 import IconToYoutube from '../components/icon-to-youtube'
 
-SwiperCore.use([EffectFade, Mousewheel, Pagination, Scrollbar, A11y])
+SwiperCore.use([EffectFade, Mousewheel])
 export default {
   name: 'Home',
   components: {

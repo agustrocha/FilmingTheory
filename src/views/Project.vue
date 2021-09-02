@@ -3,8 +3,8 @@
        class="transition duration-100 ease-in-out absolute top-0 right-0 w-full bg-neutral">
     <div id="project_header" class="relative lg:h-100 h-72">
       <img class="object-cover w-full h-full" :src="project.header_banner">
-      <a :href="project.video" class="absolute cursor-pointer top-0 left-43% mt-28">
-        <icon-button-play class="w-1/2"/>
+      <a :href="project.video" class="absolute cursor-pointer top-0 lg:left-47% left-43% mt-40">
+        <icon-button-play class="w-1/2 lg:w-auto"/>
       </a>
     </div>
     <div class="flex flex-col lg:flex-row lg:mx-containerXL mx-containerXS">

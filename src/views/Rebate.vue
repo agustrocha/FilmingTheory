@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import SwiperCore, { EffectFade, Pagination, Scrollbar } from 'swiper'
+import SwiperCore, { EffectFade, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/swiper.scss'
 import 'swiper/components/navigation/navigation.scss'
@@ -84,7 +84,7 @@ import Footer from '../components/Footer'
 import { computed } from '@vue/reactivity'
 import { useStore } from 'vuex'
 
-SwiperCore.use([EffectFade, Pagination, Scrollbar])
+SwiperCore.use([EffectFade, Pagination])
 
 export default {
   name: 'Rebate',
