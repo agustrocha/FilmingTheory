@@ -5,6 +5,8 @@
       <swiper class="h-full"
               :slides-per-view="1"
               :direction="'vertical'"
+              :pagination="{ clickable: true }"
+              :scrollbar="{ draggable: true }"
               :effect="'fade'"
               :mousewheel="true"
       >
@@ -42,9 +44,10 @@
 </template>
 
 <script>
-import SwiperCore, { EffectFade, Mousewheel } from 'swiper'
+import SwiperCore, { EffectFade, Mousewheel, Pagination, Scrollbar, A11y } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/swiper.scss'
+import 'swiper/swiper-bundle.css'
 import 'swiper/components/navigation/navigation.scss'
 import 'swiper/components/pagination/pagination.scss'
 import 'swiper/components/scrollbar/scrollbar.scss'
@@ -55,7 +58,7 @@ import { useRouter } from 'vue-router'
 import IconScroll from '../components/icon-scroll'
 import IconToYoutube from '../components/icon-to-youtube'
 
-SwiperCore.use([EffectFade, Mousewheel])
+SwiperCore.use([EffectFade, Mousewheel, Pagination, Scrollbar, A11y])
 export default {
   name: 'Home',
   components: {
@@ -98,31 +101,31 @@ export default {
 </script>
 
 <style>
-/*.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {*/
-/*  bottom: 50px;*/
-/*}*/
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 50px;
+}
 
-/*.swiper-pagination {*/
-/*  margin-right: 2rem;*/
-/*}*/
+.swiper-pagination {
+  margin-right: 2rem;
+}
 
-/*.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {*/
-/*  margin-bottom: 1.25rem;*/
-/*}*/
+.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin-bottom: 1.25rem;
+}
 
-/*.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {*/
-/*  margin-right: 0.75rem;*/
-/*}*/
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin-right: 0.75rem;
+}
 
-/*.swiper-pagination-bullet {*/
-/*  width: .7rem;*/
-/*  height: .7rem;*/
-/*  border: 1px solid white;*/
-/*  background: transparent;*/
-/*  opacity: 0.8*/
-/*}*/
+.swiper-pagination-bullet {
+  width: .7rem;
+  height: .7rem;
+  border: 1px solid white;
+  background: transparent;
+  opacity: 0.8
+}
 
-/*.swiper-pagination-bullet-active {*/
-/*  background: white !important;*/
-/*}*/
+.swiper-pagination-bullet-active {
+  background: white !important;
+}
 </style>
