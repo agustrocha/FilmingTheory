@@ -98,31 +98,31 @@ export default {
 </script>
 
 <style>
-.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
-  bottom: 50px;
-}
+/*.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {*/
+/*  bottom: 50px;*/
+/*}*/
 
-.swiper-pagination {
-  margin-right: 2rem;
-}
+/*.swiper-pagination {*/
+/*  margin-right: 2rem;*/
+/*}*/
 
-.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
-  margin-bottom: 1.25rem;
-}
+/*.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {*/
+/*  margin-bottom: 1.25rem;*/
+/*}*/
 
-.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
-  margin-right: 0.75rem;
-}
+/*.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {*/
+/*  margin-right: 0.75rem;*/
+/*}*/
 
-.swiper-pagination-bullet {
-  width: .7rem;
-  height: .7rem;
-  border: 1px solid white;
-  background: transparent;
-  opacity: 0.8
-}
+/*.swiper-pagination-bullet {*/
+/*  width: .7rem;*/
+/*  height: .7rem;*/
+/*  border: 1px solid white;*/
+/*  background: transparent;*/
+/*  opacity: 0.8*/
+/*}*/
 
-.swiper-pagination-bullet-active {
-  background: white !important;
-}
+/*.swiper-pagination-bullet-active {*/
+/*  background: white !important;*/
+/*}*/
 </style>
