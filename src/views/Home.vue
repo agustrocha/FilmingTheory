@@ -15,7 +15,7 @@
           <div v-if="index === 0">
             <video class="object-cover h-screen lg:h-auto" src="../assets/WEB_MP4_REEL_V1.mp4" autoplay muted loop></video>
             <a class="absolute z-30 bottom-0 right-0" href="https://www.youtube.com/watch?v=5kvWzQQD2CU">
-              <icon-to-youtube class="lg:mr-container mr-containerXS lg:mb-20 mb-12 w-1/2 lg:w-auto cursor-pointe text-white"/>
+              <icon-to-youtube class="lg:mr-container mr-containerXS lg:mb-20 mb-12 w-8 lg:w-auto cursor-pointe text-white"/>
             </a>
           </div>
           <div v-else class="w-full h-full">
