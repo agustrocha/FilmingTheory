@@ -35,7 +35,7 @@
         eligible costs during filming or € 200,000 on animation, always in Spanish territory.
       </div>
       <div :class="[openRebate ? 'opacity-100' : 'opacity-0']"
-           class="transition mx-container xl:mx-containerXL duration-1000 my-28">
+           class="transition mx-containerXS xl:mx-containerXL duration-1000 my-28">
         <rebate-tag label="Every possible location"
                     label_2="Residential, urban, industrial, monumental, historic, nature, beaches, sound stages"/>
         <rebate-tag label="All production services executive and line producing"
@@ -44,19 +44,19 @@
                     label_2="Direct flights, hotels, production vehicles, grip + electric rentals generators, catering, post-production facilities, sound stages."/>
       </div>
       <div :class="[openRebate ? 'opacity-100' : 'opacity-0']"
-           class=" mx-container xl:mx-containerXL transition duration-1000">
+           class=" mx-containerXS xl:mx-containerXL transition duration-1000">
         <p class="uppercase text-xl font-bold">Basic rebate requirements</p>
-        <div class="flex justify-center mt-20">
-          <div class="h-40 pr-12 2xl:px-24 border-black flex flex-col justify-center items-center">
+        <div class="flex flex-col lg:flex-row justify-center lg:mt-20 mt-12">
+          <div class="h-40 lg:pr-12 2xl:px-24 border-black flex flex-col justify-center items-center">
             <p>2 million €</p>
             <p>Min. total budget</p>
           </div>
-          <div class="h-40 px-12 2xl:px-24 border-r border-l border-black flex flex-col justify-center items-center">
+          <div class="h-40 px-12 2xl:px-24 border-b border-t lg:border-b-0 lg:border-t-0 lg:border-r lg:border-l border-black flex flex-col justify-center items-center">
             <p>1 Million €</p>
             <p>Min. expenditure in</p>
             <p>the rebate region</p>
           </div>
-          <div class="h-40 pl-12 2xl:px-24 flex flex-col justify-center items-center">
+          <div class="h-40 lg:pl-12 2xl:px-24 flex flex-col justify-center items-center">
             <p>Hire a local</p>
             <p>production service</p>
             <p>company</p>
@@ -111,13 +111,18 @@ export default {
     toggleHiddenScroll()
     return {
       openRebate,
-      toggleRebate: () => {
+      toggleRebate: async () => {
         openRebate.value ? openRebate.value = false : openRebate.value = true
+        document.body.scrollTop = 0
+        document.documentElement.scrollTop = 0
         document.querySelector('body').classList.toggle('overflow-y-hidden')
       },
       images: computed(() => {
         return store.state.rebate.images
-      })
+      }),
+      toContact: () => {
+        router.push({ name: 'Contact' })
+      }
     }
   }
 }

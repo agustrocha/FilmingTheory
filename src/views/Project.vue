@@ -3,7 +3,7 @@
        class="transition duration-100 ease-in-out absolute top-0 right-0 w-full bg-neutral">
     <div id="project_header" class="relative lg:h-100 h-72">
       <img class="object-cover w-full h-full" :src="project.header_banner">
-      <a :href="project.video" class="absolute cursor-pointer top-0 lg:left-47% left-43% mt-40">
+      <a :href="project.video" target="_blank" class="absolute cursor-pointer bottom-16 sm:left-46% lg:top-0 lg:left-47% left-43% mt-40">
         <icon-button-play class="w-1/2 lg:w-auto"/>
       </a>
     </div>
@@ -149,8 +149,7 @@ export default {
 </script>
 
 <style scoped>
-
-.swiper-button-prev {
-
+.swiper-button-next {
+  margin-right: 2rem;
 }
 </style>

@@ -33,12 +33,12 @@
             </div>
             <img v-if="p.home_image" class="w-full h-full object-cover" :src="p.home_image"/>
           </div>
+          <div :class="menu ? 'opacity-0' : 'opacity-100'"
+               class="absolute transition-opacity duration-500 z-10 bottom-0 w-full mb-20 justify-center hidden lg:flex">
+            <icon-scroll class="w-3"/>
+          </div>
         </swiper-slide>
       </swiper>
-      <div :class="menu ? 'opacity-0' : 'opacity-100'"
-           class="absolute transition-opacity duration-500 z-10 bottom-0 w-full mb-20 px-56 justify-center hidden lg:flex">
-        <icon-scroll class="w-3"/>
-      </div>
     </div>
   </div>
 </template>
@@ -101,6 +101,9 @@ export default {
 </script>
 
 <style>
+.swiper-pagination {
+  visibility: hidden !important;
+}
 .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
   bottom: 50px;
 }
@@ -127,5 +130,11 @@ export default {
 
 .swiper-pagination-bullet-active {
   background: white !important;
+}
+
+@media (min-width: 1024px) {
+  .swiper-pagination  {
+    visibility: visible !important;
+  }
 }
 </style>

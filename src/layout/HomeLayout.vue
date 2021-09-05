@@ -23,7 +23,7 @@
       <div v-for="(links, index) in menuLinks" :key="index">
         <div class="relative" v-if="links.submenuLinks">
           <div @click="toggleSubMenu" class="relative z-20 flex items-center mb-4 text-white hover:text-primary">
-            <p class="relative cursor-pointer font-semibold text-center text-2xl z-20">
+            <p class="relative cursor-pointer font-semibold text-center text-xl z-20">
               {{ links.title }}
             </p>
             <icon-arrow-right :class="[submenu ? 'rotate-90' : 'rotate-0']"
@@ -40,7 +40,7 @@
           </div>
         </div>
         <p v-else @click="pushUrl(links.url)"
-           class="relative cursor-pointer font-semibold mb-4 text-white text-center text-2xl z-20 hover:text-primary">
+           class="relative cursor-pointer font-semibold mb-4 text-white text-center text-xl z-20 hover:text-primary">
           {{ links.title }}
         </p>
       </div>

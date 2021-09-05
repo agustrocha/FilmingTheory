@@ -5,6 +5,10 @@
 @tailwind utilities;
 /*! @import */
 
+body {
+    scroll-behavior: smooth;
+}
+
 :root {
     --swiper-navigation-color: white;
     --swiper-navigation-size: 10px;
