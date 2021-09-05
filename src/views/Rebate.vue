@@ -1,14 +1,17 @@
 <template>
   <div :class="[openRebate ? '-translate-y-80' : 'translate-y-0']"
        class="transform transition duration-1000 h-screen w-full absolute">
-    <swiper :slidesPerView="1" :pagination="{ clickable: true }" :loop="true" class="h-full w-full">
+    <swiper :autoplay='{
+        "delay": 2500,
+        "disableOnInteraction": false
+      }' :slidesPerView="1" :pagination="{ clickable: true }" :loop="true" class="h-full w-full">
       <swiper-slide class="text-white h-full" v-for="(img, index) in images" :key="index">
         <img class="h-full w-full object-cover" :src="img"
              :alt="img">
       </swiper-slide>
     </swiper>
   </div>
-  <div :class="[openRebate ? 'translate-y-64' : 'translate-y-full']"
+  <div id="white-wall" :class="[openRebate ? 'translate-y-64' : 'translate-y-full']"
        class="transform transition duration-1000 ease-in-out bg-white h-full w-full absolute z-10">
   </div>
   <div class="absolute z-20 mt-12 top-1/3 w-full">
@@ -23,7 +26,7 @@
       <icon-arrow-down :class="[openRebate ? '-rotate-180' : '-rotate-0']"
                        class="transform transition duration-1000 ease-in-out w-10 ml-7 mt-5"/>
     </div>
-    <div class="">
+    <div>
       <div :class="[openRebate ? 'opacity-100' : 'opacity-0']"
            class="transition mx-containerXS xl:mx-containerXL duration-1000 lg:w-54% mt-12">Producers with
         tax residence in the Canary Islands who are in charge of a foreign film production
@@ -70,7 +73,7 @@
 </template>
 
 <script>
-import SwiperCore, { EffectFade, Pagination, Scrollbar } from 'swiper'
+import SwiperCore, { Autoplay, EffectFade, Pagination, Scrollbar } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/swiper.scss'
 import 'swiper/swiper-bundle.css'
@@ -84,8 +87,9 @@ import RebateTag from '../components/rebateTag'
 import Footer from '../components/Footer'
 import { computed } from '@vue/reactivity'
 import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
 
-SwiperCore.use([EffectFade, Pagination, Scrollbar])
+SwiperCore.use([Autoplay, EffectFade, Pagination, Scrollbar])
 
 export default {
   name: 'Rebate',
@@ -99,10 +103,17 @@ export default {
   setup () {
     const openRebate = ref(false)
     const store = useStore()
+    const router = useRouter()
+    const currentRoute = computed(() => router.currentRoute.value)
+    function toggleHiddenScroll () {
+      currentRoute.value.name === '54% Rebate' ? document.querySelector('body').classList.add('overflow-y-hidden') : document.querySelector('body').classList.remove('overflow-y-hidden')
+    }
+    toggleHiddenScroll()
     return {
       openRebate,
       toggleRebate: () => {
         openRebate.value ? openRebate.value = false : openRebate.value = true
+        document.querySelector('body').classList.toggle('overflow-y-hidden')
       },
       images: computed(() => {
         return store.state.rebate.images

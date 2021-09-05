@@ -113,17 +113,21 @@ export default {
     const store = useStore()
     const destinationId = router.currentRoute.value.params.id
     const project = ref(store.state.projects.find(p => String(p.id) === String(destinationId)))
-
     if (!project) {
       await router.push({ name: 'Home' })
     }
-
     const projectIndex = store.state.projects.findIndex(p => p.id === project.value.id)
     const prevProject = store.state.projects[projectIndex - 1]
     const nextProject = store.state.projects[projectIndex + 1]
     const projects = store.state.projects
     const images = ref(project.value.images)
-    console.log(images.value.length)
+
+    const currentRoute = computed(() => router.currentRoute.value)
+    function toggleHiddenScroll () {
+      currentRoute.value.name === '54% Rebate' ? document.querySelector('body').classList.add('overflow-y-hidden') : document.querySelector('body').classList.remove('overflow-y-hidden')
+    }
+    toggleHiddenScroll()
+
     return {
       router,
       images,
