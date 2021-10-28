@@ -31,7 +31,7 @@
                   proyecto</p>
               </div>
             </div>
-            <img v-if="p.home_image" class="w-full h-full object-cover" :src="p.home_image"/>
+            <img v-if="p.home_image" class="w-full h-full object-cover" :src="require('@/assets/' + p.home_image)"/>
           </div>
           <div :class="menu ? 'opacity-0' : 'opacity-100'"
                class="absolute transition-opacity duration-500 z-10 bottom-0 w-full mb-20 justify-center hidden lg:flex">
@@ -94,6 +94,10 @@ export default {
           name: 'Project details',
           params: { id: project.id }
         })
+      },
+      resolve_img_url: function (path) {
+        const images = require.context('../assets/', false, /\.png$|\.jpg$/)
+        return images('./' + path)
       }
     }
   }
